@@ -2,8 +2,11 @@
   -create react app
   -config tailwindCSS
   -Header
+  -routing
   -login form
   -Sign up form
+  -form validation
+  -useRef Hooks
 
 # Features
  -login/Sign Up
@@ -19,3 +22,6 @@
  -NetflixGPT
    -Search Bar
    -Movie Suggestions
+
+   # formik library
+    -when your form like bank application use this library for creating form  { ! important}

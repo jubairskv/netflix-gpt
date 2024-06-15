@@ -1,10 +1,13 @@
-
+import React from 'react'
 import Body from './Components/Body';
 
-function App() {
+
+
+const App = () => {
   return (
     <Body/>
-  );
+  )
 }
 
-export default App;
+export default App
+

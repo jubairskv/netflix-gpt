@@ -2,32 +2,47 @@ import React from 'react'
 import Header from "./Header"
 import { useState, useRef } from 'react'
 import { checkValidData } from "../Utils/Validate"
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../Utils/fireBase"
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true)
-  const [errorMessage,setErrorMessage]=useState(null)
+  const [errorMessage, setErrorMessage] = useState(null)
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm)
   }
 
-  const name =useRef(null)
+  const name = useRef(null)
   const email = useRef(null)
   const password = useRef(null)
 
   const HandleButtonClick = () => {
-     console.log(email.current.value)
-     console.log(password.current.value)
+    console.log(email.current.value)
+    console.log(password.current.value)
     const message = checkValidData(email.current.value, password.current.value)
     setErrorMessage(message)
     console.log(message)
-    if(message)return;
+    if (message) return;
 
-    if(!isSignInForm){
+    if (!isSignInForm) {
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed up 
+          const user = userCredential.user;
+          console.log(user)
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode+errorMessage)
+
+        });
+
 
     }
-    else{
-      
+    else {
+
     }
   }
 

@@ -11,7 +11,7 @@ const Login = () => {
     setIsSignInForm(!isSignInForm)
   }
 
- // const name =useRef(null)
+  const name =useRef(null)
   const email = useRef(null)
   const password = useRef(null)
 
@@ -21,6 +21,14 @@ const Login = () => {
     const message = checkValidData(email.current.value, password.current.value)
     setErrorMessage(message)
     console.log(message)
+    if(message)return;
+
+    if(!isSignInForm){
+
+    }
+    else{
+      
+    }
   }
 
   return (

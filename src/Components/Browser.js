@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from './Header'
 
 const bro = () => {
   return (
     <div>
-      Browser
+      <Header/>
     </div>
   )
 }

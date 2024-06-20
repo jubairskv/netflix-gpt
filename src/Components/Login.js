@@ -2,18 +2,24 @@ import React from 'react'
 import Header from "./Header"
 import { useState, useRef } from 'react'
 import { checkValidData } from "../Utils/Validate"
-import { createUserWithEmailAndPassword , signInWithEmailAndPassword} from "firebase/auth";
+import { createUserWithEmailAndPassword , signInWithEmailAndPassword,updateProfile} from "firebase/auth";
 import { auth } from "../Utils/fireBase"
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {addUser} from "../Utils/userSlice"
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true)
   const [errorMessage, setErrorMessage] = useState(null)
 
+  const navigate =useNavigate();
+  const dispatch =useDispatch();
+
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm)
   }
 
-  // const name = useRef(null)
+  const name = useRef(null)
   const email = useRef(null)
   const password = useRef(null)
 
@@ -30,7 +36,25 @@ const Login = () => {
       createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user)
+          updateProfile(user, {
+            displayName: name.current.value, 
+            photoURL: "https://avatars.githubusercontent.com/u/116979001?v=4"
+          })
+          .then(() => {
+            const {uid ,email, displayName,photoURL} = auth.currentUser;
+            dispatch(
+              addUser({
+                uid:uid, 
+                email:email, 
+                displayName:displayName, 
+                photoURL:photoURL})
+              ) 
+            navigate("/browser")
+          }).catch((error) => {
+           setErrorMessage(error.message)
+          });
+          //console.log(user)
+          navigate("/browser")
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -43,6 +67,7 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user)
+          navigate("/browser")
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -62,7 +87,7 @@ const Login = () => {
         <h1 className='font-bold text-3xl py-4 '>{isSignInForm ? "Sign In" : "Sign Up"}</h1>
         {!isSignInForm &&
           <input
-            // ref={name}
+            ref={name}
             type='text'
             placeholder='Full Name'
             className=' p-4 my-4 w-full bg-gray-700 rounded-lg' />

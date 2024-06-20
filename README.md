@@ -7,6 +7,16 @@
   -Sign up form
   -form validation
   -useRef Hooks
+  -firebase setup
+  -deploying our app to store
+  -creating signup and suer account
+  -implment sign in user API
+  -creating redux store with 
+  -implemented signout
+  -update profile
+  -fetch from TMDB movies API
+
+
 
 # Features
  -login/Sign Up

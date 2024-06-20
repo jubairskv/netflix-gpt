@@ -24,8 +24,8 @@ const Login = () => {
   const password = useRef(null)
 
   const HandleButtonClick = () => {
-    console.log(email.current.value)
-    console.log(password.current.value)
+    //console.log(email.current.value)
+    //console.log(password.current.value)
     const message = checkValidData(email.current.value, password.current.value)
     setErrorMessage(message)
     console.log(message)
@@ -42,6 +42,7 @@ const Login = () => {
           })
           .then(() => {
             const {uid ,email, displayName,photoURL} = auth.currentUser;
+           // console.log(photoURL)
             dispatch(
               addUser({
                 uid:uid, 
@@ -53,7 +54,7 @@ const Login = () => {
           }).catch((error) => {
            setErrorMessage(error.message)
           });
-          //console.log(user)
+         // console.log(user)
           navigate("/browser")
         })
         .catch((error) => {

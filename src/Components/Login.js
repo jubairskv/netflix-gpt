@@ -12,7 +12,6 @@ const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true)
   const [errorMessage, setErrorMessage] = useState(null)
 
-  const navigate =useNavigate();
   const dispatch =useDispatch();
 
   const toggleSignInForm = () => {
@@ -50,12 +49,9 @@ const Login = () => {
                 displayName:displayName, 
                 photoURL:photoURL})
               ) 
-            navigate("/browser")
           }).catch((error) => {
            setErrorMessage(error.message)
           });
-         // console.log(user)
-          navigate("/browser")
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -66,9 +62,7 @@ const Login = () => {
     else { //Sign in logic
       signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          const user = userCredential.user;
-          console.log(user)
-          navigate("/browser")
+          const user = userCredential.user
         })
         .catch((error) => {
           const errorCode = error.code;

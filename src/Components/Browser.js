@@ -1,7 +1,11 @@
-import React from 'react'
+import useNowPlayingMovies from '../Hooks/useNowPalyingMovies'
 import Header from './Header'
 
-const bro = () => {
+
+const Browser = () => {
+
+  useNowPlayingMovies();
+
   return (
     <div>
       <Header/>
@@ -9,4 +13,4 @@ const bro = () => {
   )
 }
 
-export default bro
+export default Browser

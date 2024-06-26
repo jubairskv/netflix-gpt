@@ -19,6 +19,8 @@
   -BugFix:if the use is not logged in redirect /browser  to loggin   page and vice-verse
   -Unsubscribe to the onAuthStateChnage callback
   -Add hardcoded values to the constant file
+  -Register TMDB API & create an aoo % get access token
+  -get data from TMDB now playing movie list
 
 
 

@@ -20,7 +20,15 @@
   -Unsubscribe to the onAuthStateChnage callback
   -Add hardcoded values to the constant file
   -Register TMDB API & create an aoo % get access token
-  -get data from TMDB now playing movie list
+  -get data from TMDB now playing movie list API
+  -Custom hook for now playimg movies
+  -create movieSlice
+  -update store with movies data
+  -planning for main container and secondary container
+  -fetch data for trailer video
+  -update the store with video data
+  -embedded the youtube video and make it autoplay and mute
+  -tailwind classes to make main containeer look awesome
 
 
 

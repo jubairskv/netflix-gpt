@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaPlay } from "react-icons/fa";
+//import { FaPlay } from "react-icons/fa";
 
 const VideoTitle = ({title, overview}) => {
   return (

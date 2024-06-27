@@ -29,7 +29,16 @@
   -update the store with video data
   -embedded the youtube video and make it autoplay and mute
   -tailwind classes to make main containeer look awesome
-  -build secndary component
+  -build secondary component
+  -Build movie list
+  -Build movie card
+  -TDMB image CDB url
+  -Made the browser page amazing with tailwind css
+  -usePopular custom hook
+  -useToprated custom hook
+  -useUpcommingMovies custom hook
+  -GPT search feture
+
 
 # Features
  -login/Sign Up

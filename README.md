@@ -29,8 +29,7 @@
   -update the store with video data
   -embedded the youtube video and make it autoplay and mute
   -tailwind classes to make main containeer look awesome
-
-
+  -build secndary component
 
 # Features
  -login/Sign Up

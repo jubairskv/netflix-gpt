@@ -31,7 +31,7 @@ const Login = () => {
     //console.log(password.current.value)
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
-    console.log(message);
+    //console.log(message);
     if (message) return;
 
     // Sign up logic

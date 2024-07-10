@@ -1,5 +1,5 @@
 import React from 'react'
-import { LOGO } from '../Utils/Constant'
+import { LOGO } from '../Utils/constant'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { auth } from '../Utils/fireBase';
@@ -7,7 +7,7 @@ import { signOut } from "firebase/auth";
 import { useEffect } from "react"
 import { addUser, removeUser } from "../Utils/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
-import { toggleGptSearchView } from '../Utils/GptSlice';
+import { toggleGptSearchView } from '../Utils/gptSlice';
 
 const Header = () => {
   const dispatch = useDispatch();

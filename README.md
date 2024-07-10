@@ -37,7 +37,10 @@
   -usePopular custom hook
   -useToprated custom hook
   -useUpcommingMovies custom hook
-  -GPT search feture
+  -GPT search page
+  -GPT search bar
+  -(IMPORTANT FUNCTIONALITY) multi-language feature in our App
+  -
 
 
 # Features
